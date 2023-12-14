@@ -17,11 +17,28 @@ public class Player extends Actor
         //  your action code here.
         if (Greenfoot.isKeyDown("a"))
         {
-            move(-2); 
+            move(-5); 
         }
         if (Greenfoot.isKeyDown("d"))
         {
-            move(2); 
+            move(5); 
         }
+        if (Greenfoot.isKeyDown("space"))
+        {
+            World myWorld = getWorld(); 
+            Laser heroLaser = new Laser();
+            getWorld().addObject(heroLaser, getX(), getY());
+            heroLaser.setRotation(getRotation()); 
+            if(isTouching(Bullet.class))
+            {
+                myWorld.removeObject(this);  
+            }
+        }
+        
+        
+    }
+    public void playerHit()
+    {
+        World myWorld = getWorld();
     }
 }

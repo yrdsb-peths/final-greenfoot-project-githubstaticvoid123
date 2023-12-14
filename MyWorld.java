@@ -20,9 +20,22 @@ public class MyWorld extends World
         Player HeroShip = new Player(); 
         addObject(HeroShip, 300, 300); 
         Bullet enemyBullet = new Bullet(); 
-        addObject(enemyBullet, getX(), getY()); 
-        
-        
-        
+        addObject(enemyBullet, 300, 0);
+        Laser heroLaser = new Laser(); 
     }
+    
+    public void respawnBullet()
+    {
+        Bullet newBullet = new Bullet(); 
+        int x = Greenfoot.getRandomNumber(600); 
+        int y = 0; 
+        addObject(newBullet, x, y); 
+    }
+    
+    public void removeLaser() 
+    {
+        Laser heroLaser = new Laser(); 
+         
+    }
+    
 }
