@@ -32,10 +32,12 @@ public class MyWorld extends World
         addObject(newBullet, x, y); 
     }
     
-    public void removeLaser() 
+    public void gameOver() 
     {
-        Laser heroLaser = new Laser(); 
-         
+        Label gameOverLabel = new Label("Game Over", 100); 
+        addObject(gameOverLabel, 300, 200);  
+        Label doOver = new Label("Press 'f' to try again", 50); 
+        addObject(doOver, 300, 300);  
     }
     
 }
