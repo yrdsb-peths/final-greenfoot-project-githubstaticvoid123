@@ -32,10 +32,9 @@ public class Laser extends Actor
                 Destroy();
             }
         
-        if(getY() >= World.getHeight())
+        if(getY() == 0)
             {
                 World.removeObject(this); 
-                World.respawnBullet(); 
             }
         
             
@@ -46,6 +45,5 @@ public class Laser extends Actor
     {
         MyWorld World = (MyWorld) getWorld(); 
         World.respawnBullet();
-    }
-    
+    }    
 }

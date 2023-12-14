@@ -35,6 +35,7 @@ public class Player extends Actor
             Laser heroLaser = new Laser();
             getWorld().addObject(heroLaser, getX(), getY());
             heroLaser.setRotation(getRotation()); 
+            
         }
         
         
