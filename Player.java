@@ -37,6 +37,14 @@ public class Player extends Actor
             heroLaser.setRotation(getRotation()); 
             
         }
+        if(Greenfoot.isKeyDown("w")) 
+        {
+            setLocation(getX(), getY() - 2); 
+        }
+        if(Greenfoot.isKeyDown("s")) 
+        {
+            setLocation(getX(), getY() + 2); 
+        }
         
         
     }
