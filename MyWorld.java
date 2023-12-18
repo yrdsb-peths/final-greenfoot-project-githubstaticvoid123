@@ -20,6 +20,8 @@ public class MyWorld extends World
     private static final int picHeight = (new GreenfootImage(scrollBack)).getHeight();
     private GreenfootImage bgImage, bgBase;
     private int scrollPosition = 0; 
+    private int score = 0; 
+    Label scoreLabel;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -34,6 +36,9 @@ public class MyWorld extends World
         Bullet enemyBullet = new Bullet(); 
         addObject(enemyBullet, 300, 0);
         Laser heroLaser = new Laser();
+        
+        Label scoreLabel = new Label("0", 80); 
+        addObject(scoreLabel, 50, 0); 
     }
     
     public void act()
@@ -42,6 +47,12 @@ public class MyWorld extends World
         while(scrollSpeed > 0 && scrollPosition < -picHeight) scrollPosition += picHeight;
         while(scrollSpeed < 0 && scrollPosition > 0) scrollPosition -= picHeight;
         paint(scrollPosition);
+    }
+    
+    public void increaseScore()
+    {
+        score++; 
+        scoreLabel.setValue(score); 
     }
     
     public void respawnBullet()
@@ -63,7 +74,7 @@ public class MyWorld extends World
     private void paint(int position)
     {
         GreenfootImage bg = getBackground();
-        bg.drawImage(bgBase, position, 0);
-        bg.drawImage(bgImage, position + picHeight, 0);
+        bg.drawImage(bgBase, 0, position);
+        bg.drawImage(bgImage, 0, position - 5);
     }
 }

@@ -39,14 +39,12 @@ public class Player extends Actor
         }
         if(Greenfoot.isKeyDown("w")) 
         {
-            setLocation(getX(), getY() - 2); 
+            setLocation(getX(), getY() - 5); 
         }
         if(Greenfoot.isKeyDown("s")) 
         {
-            setLocation(getX(), getY() + 2); 
+            setLocation(getX(), getY() + 5); 
         }
-        
-        
     }
     public void playerHit()
     {

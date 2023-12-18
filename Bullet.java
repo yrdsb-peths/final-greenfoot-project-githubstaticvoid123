@@ -15,12 +15,14 @@ public class Bullet extends Actor
     public void act()
     {
         // Add your action code here.
+        MyWorld World = (MyWorld) getWorld(); 
         setLocation(getX(), getY() + 1); 
         
         if(isTouching(Bullet.class))
             {
                 removeTouching(Bullet.class);   
+                World.increaseScore(); 
             }
-            MyWorld World = (MyWorld) getWorld(); 
+            
     }
 }
