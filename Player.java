@@ -6,12 +6,31 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
+
+
 public class Player extends Actor
 {
     /**
      * Act - do whatever the Player wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    GreenfootImage[] idle = new GreenfootImage[4]; 
+    public Player()
+    {
+        for(int i = 0; i < idle.length; i++) 
+        {
+            idle[i] = new GreenfootImage("images/playerShip/tile00" + i + ".png"); 
+        }
+        setImage(idle[0]); 
+    }
+    
+    int imageIndex = 0; 
+    public void animateShip()
+    {
+        setImage(idle[imageIndex]); 
+        imageIndex = (imageIndex + 1) % idle.length; 
+    }
+    
     public void act()
     {
         //  your action code here.
@@ -20,7 +39,7 @@ public class Player extends Actor
                 World myWorld = getWorld(); 
                 myWorld.removeObject(this);
             }
-        
+        animateShip(); 
         if (Greenfoot.isKeyDown("a"))
         {
             move(-5); 

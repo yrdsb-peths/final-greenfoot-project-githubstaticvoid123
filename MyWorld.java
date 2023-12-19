@@ -38,14 +38,14 @@ public class MyWorld extends World
         Laser heroLaser = new Laser();
         
         Label scoreLabel = new Label("0", 80); 
-        addObject(scoreLabel, 50, 0); 
+        addObject(scoreLabel, 100, 100); 
     }
     
     public void act()
     {
         scrollPosition -= scrollSpeed;
-        while(scrollSpeed > 0 && scrollPosition < -picHeight) scrollPosition += picHeight;
-        while(scrollSpeed < 0 && scrollPosition > 0) scrollPosition -= picHeight;
+        while(scrollSpeed > 0 && scrollPosition < -picHeight) scrollPosition -= picHeight;
+        while(scrollSpeed < 0 && scrollPosition > 0) scrollPosition += picHeight;
         paint(scrollPosition);
     }
     
@@ -75,6 +75,6 @@ public class MyWorld extends World
     {
         GreenfootImage bg = getBackground();
         bg.drawImage(bgBase, 0, position);
-        bg.drawImage(bgImage, 0, position - 5);
+        bg.drawImage(bgImage, 0, position + 5);
     }
 }
