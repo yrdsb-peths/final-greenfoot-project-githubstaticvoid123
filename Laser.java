@@ -30,6 +30,7 @@ public class Laser extends Actor
                 removeTouching(Bullet.class);
                 Bullet newBullet = new Bullet(); 
                 Destroy();
+                
             }
         
         if(getY() == 0)
@@ -45,5 +46,6 @@ public class Laser extends Actor
     {
         MyWorld World = (MyWorld) getWorld(); 
         World.respawnBullet();
+        World.increaseScore(); 
     }    
 }

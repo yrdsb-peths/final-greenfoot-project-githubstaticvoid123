@@ -1,17 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * Write a description of class levelOne here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MyWorld extends World
+public class levelOne extends World
 {
     /**
-     * Constructor for objects of class MyWorld.
+     * Constructor for objects of class levelOne.
      * 
-    public static void 
      */
     public static String scrollBack = "Parallax100.png"; 
     public static double scrollSpeed = 2.5; 
@@ -22,9 +21,8 @@ public class MyWorld extends World
     private int score = 0; 
     Label scoreLabel;
     // restart here
-   
-    private Scroller scroller; 
-    public MyWorld()
+    private Scroller scroller;
+    public levelOne()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(400, 800, 1);
@@ -39,20 +37,21 @@ public class MyWorld extends World
         //Background img0 = new Background(); 
         //addObject(img0, getWidth()/2, getHeight()/2);
         
-
         addObject(HeroShip, 300, 300); 
-        Bullet enemyBullet = new Bullet(); 
-        addObject(enemyBullet, 300, 0);
+        Bullet enemyBullet1 = new Bullet(); 
+        addObject(enemyBullet1, 300, 0);
+        
+        Bullet enemyBullet2 = new Bullet(); 
+        addObject(enemyBullet2, 300, 0);
+        
         Laser heroLaser = new Laser();
 
         Label scoreLabel = new Label("0", 80); 
         addObject(scoreLabel, 100, 100);
         
-        scroller = new Scroller(this, new GreenfootImage("Parallax100.png"));
-         
-        
+        scroller = new Scroller(this, new GreenfootImage("Parallax100.png")); 
     }
-
+    
     public void act()
     {
         scroll(); 
@@ -90,5 +89,10 @@ public class MyWorld extends World
     {
     // determine amount to scroll (dsx, dsy)
     scroller.scroll(0, 1); // have scroller scroll world
+    }
+    
+    private void spawnOne()
+    {
+        
     }
 }

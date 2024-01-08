@@ -34,6 +34,12 @@ public class Player extends Actor
             {
                 World myWorld = getWorld(); 
                 myWorld.removeObject(this);
+                GreenfootImage[] death = new GreenfootImage[5]; 
+                for(int i = 0; i < death.length; i++)
+                {
+                    death[i] = new GreenfootImage("images/gameOver/tile00" + i + ".png"); 
+                }
+                setImage(death[0]); 
             }
         animateShip(); 
         if (Greenfoot.isKeyDown("a"))
@@ -66,9 +72,5 @@ public class Player extends Actor
     {
         setImage(idle[imageIndex]); 
         imageIndex = (imageIndex + 1) % idle.length; 
-    }
-    public void playerHit()
-    {
-        World myWorld = getWorld();
     }
 }

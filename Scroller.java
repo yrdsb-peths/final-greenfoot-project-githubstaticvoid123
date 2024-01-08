@@ -65,8 +65,8 @@ public class Scroller extends Actor
         else // unlimited image wrapping
         {
             // update scroll positions
-            scrolledX += dsx;
-            scrolledY += dsy;
+            scrolledX -= dsx;
+            scrolledY -= dsy;
             // scroll background image
             if (scrollImage != null)
             {
