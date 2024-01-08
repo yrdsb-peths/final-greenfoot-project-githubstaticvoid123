@@ -19,9 +19,8 @@ public class Bullet extends Actor
         setLocation(getX(), getY() + 1); 
         
         if(isTouching(Bullet.class))
-            {
-                removeTouching(Bullet.class);   
-                World.increaseScore(); 
+            { 
+                removeTouching(Bullet.class);  
             }
             
     }

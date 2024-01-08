@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -22,39 +21,48 @@ public class MyWorld extends World
     private int scrollPosition = 0; 
     private int score = 0; 
     Label scoreLabel;
+    // restart here
+   
+    private Scroller scroller; 
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(400, 800, 1);
-        setBackground(scrollBack);
-        bgImage = new GreenfootImage(getBackground());
-        bgBase = new GreenfootImage(picWidth, getHeight());
-        bgBase.drawImage(bgImage, 0, 0);
+        //GreenfootImage background = new GreenfootImage("Parallax100.png");
+        //setBackground(background);
+
+        //bgImage = new GreenfootImage(getBackground());
+        //bgBase = new GreenfootImage(picWidth, getHeight());
+        //bgBase.drawImage(bgImage, 0, 0);
         Player HeroShip = new Player(); 
+
+        //Background img0 = new Background(); 
+        //addObject(img0, getWidth()/2, getHeight()/2);
         
+
         addObject(HeroShip, 300, 300); 
         Bullet enemyBullet = new Bullet(); 
         addObject(enemyBullet, 300, 0);
         Laser heroLaser = new Laser();
-        
+
         Label scoreLabel = new Label("0", 80); 
+        
+        
+        scroller = new Scroller(this, new GreenfootImage("Parallax100.png"));
         addObject(scoreLabel, 100, 100); 
+        
     }
-    
+
     public void act()
     {
-        scrollPosition -= scrollSpeed;
-        while(scrollSpeed > 0 && scrollPosition < -picHeight) scrollPosition -= picHeight;
-        while(scrollSpeed < 0 && scrollPosition > 0) scrollPosition += picHeight;
-        paint(scrollPosition);
+        scroll(); 
     }
-    
     public void increaseScore()
     {
-        score++; 
-        scoreLabel.setValue(score); 
+        score++;
+        scoreLabel.setValue(score);  
     }
-    
+
     public void respawnBullet()
     {
         Bullet newBullet = new Bullet(); 
@@ -62,7 +70,7 @@ public class MyWorld extends World
         int y = 0; 
         addObject(newBullet, x, y); 
     }
-    
+
     public void gameOver() 
     {
         Label gameOverLabel = new Label("Game Over", 100); 
@@ -70,11 +78,17 @@ public class MyWorld extends World
         Label doOver = new Label("Press 'f' to try again", 50); 
         addObject(doOver, 300, 300);  
     }
-    
+
     private void paint(int position)
     {
         GreenfootImage bg = getBackground();
-        bg.drawImage(bgBase, 0, position);
-        bg.drawImage(bgImage, 0, position + 5);
+        bg.drawImage(bgImage, 0, position);
+        bg.drawImage(bgImage, 0, position - 2);
     }
+    
+    private void scroll()
+{
+    // determine amount to scroll (dsx, dsy)
+    scroller.scroll(0, 1); // have scroller scroll world
+}
 }

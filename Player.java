@@ -19,17 +19,13 @@ public class Player extends Actor
     {
         for(int i = 0; i < idle.length; i++) 
         {
-            idle[i] = new GreenfootImage("images/playerShip/tile00" + i + ".png"); 
+            idle[i] = new GreenfootImage("images/playerShip2/tile00" + i + ".png"); 
         }
         setImage(idle[0]); 
     }
     
     int imageIndex = 0; 
-    public void animateShip()
-    {
-        setImage(idle[imageIndex]); 
-        imageIndex = (imageIndex + 1) % idle.length; 
-    }
+    
     
     public void act()
     {
@@ -64,6 +60,12 @@ public class Player extends Actor
         {
             setLocation(getX(), getY() + 5); 
         }
+    }
+    
+    public void animateShip()
+    {
+        setImage(idle[imageIndex]); 
+        imageIndex = (imageIndex + 1) % idle.length; 
     }
     public void playerHit()
     {
