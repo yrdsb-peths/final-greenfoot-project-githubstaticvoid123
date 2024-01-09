@@ -39,15 +39,22 @@ public class levelOne extends World
         
         addObject(HeroShip, 300, 300); 
         Bullet enemyBullet1 = new Bullet(); 
-        addObject(enemyBullet1, 300, 0);
-        
+        addObject(enemyBullet1, Greenfoot.getRandomNumber(400), 0);
         Bullet enemyBullet2 = new Bullet(); 
-        addObject(enemyBullet2, 300, 0);
+        addObject(enemyBullet2, Greenfoot.getRandomNumber(400), 0);
+        Bullet enemyBullet3 = new Bullet(); 
+        addObject(enemyBullet3, Greenfoot.getRandomNumber(400), 0);
+        Bullet enemyBullet4 = new Bullet(); 
+        addObject(enemyBullet4, Greenfoot.getRandomNumber(400), 0);
+        Bullet enemyBullet5 = new Bullet(); 
+        addObject(enemyBullet5, Greenfoot.getRandomNumber(400), 0);
+        Bullet enemyBullet6 = new Bullet(); 
+        addObject(enemyBullet6, Greenfoot.getRandomNumber(400), 0);
         
         Laser heroLaser = new Laser();
 
-        Label scoreLabel = new Label("0", 80); 
-        addObject(scoreLabel, 100, 100);
+        Label scoreLabel = new Label("0", 100); 
+        addObject(scoreLabel, 100, 100); 
         
         scroller = new Scroller(this, new GreenfootImage("Parallax100.png")); 
     }
@@ -91,8 +98,8 @@ public class levelOne extends World
     scroller.scroll(0, 1); // have scroller scroll world
     }
     
-    private void spawnOne()
+    public void death()
     {
-        
+    
     }
 }

@@ -33,7 +33,6 @@ public class Player extends Actor
         if(isTouching(Bullet.class))
             {
                 World myWorld = getWorld(); 
-                myWorld.removeObject(this);
                 GreenfootImage[] death = new GreenfootImage[5]; 
                 for(int i = 0; i < death.length; i++)
                 {

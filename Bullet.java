@@ -15,13 +15,16 @@ public class Bullet extends Actor
     public void act()
     {
         // Add your action code here.
-        MyWorld World = (MyWorld) getWorld(); 
-        setLocation(getX(), getY() + 5); 
+        setLocation(getX(), getY() + 2); 
         
-        if(isTouching(Bullet.class))
+        if(isTouching(Laser.class))
             { 
-                removeTouching(Bullet.class);  
+                removeTouching(Laser.class);  
             }
         
+            if(getY() == 800)
+            {
+                removeTouching(Bullet.class);
+            }
     }
 }
