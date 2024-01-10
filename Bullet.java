@@ -25,6 +25,8 @@ public class Bullet extends Actor
             if(getY() == 800)
             {
                 removeTouching(Bullet.class);
+                MyWorld World = new MyWorld(); 
+                World.respawnBullet(); 
             }
     }
 }

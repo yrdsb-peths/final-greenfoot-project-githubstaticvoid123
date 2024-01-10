@@ -42,7 +42,7 @@ public class levelTwo extends World
         addObject(HeroShip, 300, 300); 
         Bullet enemyBullet = new Bullet(); 
         addObject(enemyBullet, 300, 0);
-        Laser heroLaser = new Laser();
+        Laser heroLaser2 = new Laser();
 
         Label scoreLabel = new Label("0", 80); 
         addObject(scoreLabel, 100, 100);

@@ -47,7 +47,7 @@ public class levelThree extends World
         Bullet enemyBullet6 = new Bullet(); 
         addObject(enemyBullet6, Greenfoot.getRandomNumber(400), 0);
         
-        Laser heroLaser = new Laser();
+        Laser heroLaser3 = new Laser();
 
         Label scoreLabel = new Label("0", 80); 
         addObject(scoreLabel, 100, 100);

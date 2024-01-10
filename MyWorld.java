@@ -66,7 +66,7 @@ public class MyWorld extends World
     public void respawnBullet()
     {
         Bullet newBullet = new Bullet(); 
-        int x = Greenfoot.getRandomNumber(600); 
+        int x = Greenfoot.getRandomNumber(400); 
         int y = 0; 
         addObject(newBullet, x, y); 
     }

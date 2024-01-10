@@ -56,6 +56,7 @@ public class levelOne extends World
         Label scoreLabel = new Label("0", 100); 
         addObject(scoreLabel, 100, 100); 
         
+        
         scroller = new Scroller(this, new GreenfootImage("Parallax100.png")); 
     }
     
