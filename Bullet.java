@@ -22,10 +22,9 @@ public class Bullet extends Actor
                 removeTouching(Laser.class);  
             }
         
-            if(getY() == 800)
+            if(getY() == 650)
             {
-                removeTouching(Bullet.class);
-                MyWorld World = new MyWorld(); 
+                
                 Destroy2(); 
             }
     }
@@ -33,7 +32,7 @@ public class Bullet extends Actor
     public void Destroy2()
     {
         MyWorld World = (MyWorld) getWorld(); 
+        World.removeObject(this); 
         World.respawnBullet();
-        World.increaseScore(); 
     }
 }
