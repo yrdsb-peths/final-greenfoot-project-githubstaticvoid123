@@ -25,7 +25,7 @@ public class Player extends Actor
     }
     
     int imageIndex = 0; 
-    
+    GreenfootSound Deathsound = new GreenfootSound ("mixkit-arcade-space-shooter-dead-notification-272.mp3"); 
     
     public void act()
     {
@@ -39,6 +39,7 @@ public class Player extends Actor
                     death[i] = new GreenfootImage("images/gameOver/tile00" + i + ".png"); 
                 }
                 setImage(death[0]); 
+                Deathsound.play(); 
             }
         animateShip(); 
         if (Greenfoot.isKeyDown("a"))

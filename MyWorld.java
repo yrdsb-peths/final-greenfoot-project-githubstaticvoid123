@@ -60,7 +60,7 @@ public class MyWorld extends World
     public void increaseScore()
     {
         score++;
-        scoreLabel.setValue(score);  
+        
     }
 
     public void respawnBullet()

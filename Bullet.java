@@ -26,7 +26,14 @@ public class Bullet extends Actor
             {
                 removeTouching(Bullet.class);
                 MyWorld World = new MyWorld(); 
-                World.respawnBullet(); 
+                Destroy2(); 
             }
+    }
+    
+    public void Destroy2()
+    {
+        MyWorld World = (MyWorld) getWorld(); 
+        World.respawnBullet();
+        World.increaseScore(); 
     }
 }

@@ -23,7 +23,7 @@ public class Laser extends Actor
         // Add your action code here.
         
         setLocation(getX(), getY() - 5);
-        
+        MyWorld World = (MyWorld) getWorld(); 
         if(isTouching(Bullet.class))
             {
                 removeTouching(Bullet.class);
@@ -35,6 +35,7 @@ public class Laser extends Actor
         if(getY() == 0)
             {
                 removeTouching(Laser.class);
+                World.removeObject(this); 
             }
         
             
