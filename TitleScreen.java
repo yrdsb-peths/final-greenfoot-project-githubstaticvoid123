@@ -36,19 +36,19 @@ public class TitleScreen extends World
     {
         if(Greenfoot.isKeyDown("f"))
         {
-            levelOne gameWorld1 = new levelOne(); 
+            level1 gameWorld1 = new level1(); 
             Greenfoot.setWorld(gameWorld1); 
         }
         
         if(Greenfoot.isKeyDown("g"))
         {
-            levelTwo gameWorld2 = new levelTwo(); 
+            level2 gameWorld2 = new level2(); 
             Greenfoot.setWorld(gameWorld2); 
         }
         
         if(Greenfoot.isKeyDown("h")) 
         {
-            levelThree gameWorld3 = new levelThree(); 
+            level3 gameWorld3 = new level3(); 
             Greenfoot.setWorld(gameWorld3); 
         }
     }
