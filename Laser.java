@@ -28,7 +28,7 @@ public class Laser extends Actor
             {
                 removeTouching(Bullet.class);
                 Bullet newBullet = new Bullet(); 
-                Destroy();
+                World.Destroy();
                 
             }
         
@@ -42,10 +42,4 @@ public class Laser extends Actor
     }
     
     
-    public void Destroy()
-    {
-        MyWorld World = (MyWorld) getWorld(); 
-        World.respawnBullet();
-        World.increaseScore(); 
-    }    
 }

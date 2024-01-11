@@ -24,7 +24,7 @@ public class Bullet extends Actor
         
             if(getY() == 650)
             {
-                
+        
                 Destroy2(); 
             }
     }

@@ -32,7 +32,9 @@ public class levelOne extends World
         //bgImage = new GreenfootImage(getBackground());
         //bgBase = new GreenfootImage(picWidth, getHeight());
         //bgBase.drawImage(bgImage, 0, 0);
+
         Player HeroShip = new Player(); 
+        
 
         //Background img0 = new Background(); 
         //addObject(img0, getWidth()/2, getHeight()/2);

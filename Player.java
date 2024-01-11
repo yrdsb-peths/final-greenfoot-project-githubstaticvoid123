@@ -15,6 +15,7 @@ public class Player extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     GreenfootImage[] idle = new GreenfootImage[4]; 
+    GreenfootImage[] death = new GreenfootImage[5]; 
     public Player()
     {
         for(int i = 0; i < idle.length; i++) 
@@ -25,7 +26,9 @@ public class Player extends Actor
     }
     
     int imageIndex = 0; 
-    GreenfootSound Deathsound = new GreenfootSound ("mixkit-arcade-space-shooter-dead-notification-272.mp3"); 
+    GreenfootSound Deathsound = new GreenfootSound ("mixkit-arcade-space-shooter-dead-notification-272.mp3");
+    private static int COOLDOWN_MAX = 20; 
+    private int cannonCooldown = 0; 
     
     public void act()
     {
@@ -33,7 +36,7 @@ public class Player extends Actor
         if(isTouching(Bullet.class))
             {
                 World myWorld = getWorld(); 
-                GreenfootImage[] death = new GreenfootImage[5]; 
+                
                 for(int i = 0; i < death.length; i++)
                 {
                     death[i] = new GreenfootImage("images/gameOver/tile00" + i + ".png"); 
@@ -52,11 +55,18 @@ public class Player extends Actor
         }
         if (Greenfoot.isKeyDown("space"))
         {
-            World myWorld = getWorld(); 
-            Laser heroLaser = new Laser();
-            getWorld().addObject(heroLaser, getX(), getY());
-            heroLaser.setRotation(getRotation()); 
             
+            if (cannonCooldown > 0) {
+                cannonCooldown--; 
+            } 
+            else if (Greenfoot.isKeyDown("space")) {
+
+            World myWorld2 = getWorld(); 
+            Laser heroLaser2 = new Laser();
+            getWorld().addObject(heroLaser2, getX(), getY());
+            heroLaser2.setRotation(getRotation()); 
+            cannonCooldown = COOLDOWN_MAX;
+            }
         }
         if(Greenfoot.isKeyDown("w")) 
         {
@@ -67,6 +77,8 @@ public class Player extends Actor
             setLocation(getX(), getY() + 5); 
         }
     }
+    
+    
     
     public void animateShip()
     {

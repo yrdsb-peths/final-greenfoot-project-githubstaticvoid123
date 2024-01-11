@@ -62,6 +62,14 @@ public class MyWorld extends World
         score++;
         
     }
+    
+        
+    
+    public void gameOver() 
+    {
+        gameOver deathscreen = new gameOver(); 
+        Greenfoot.setWorld(deathscreen); 
+    }
 
     public void respawnBullet()
     {
@@ -70,15 +78,14 @@ public class MyWorld extends World
         int y = 0; 
         addObject(newBullet, x, y); 
     }
-
-    public void gameOver() 
+    
+    public void Destroy() 
     {
-        Label gameOverLabel = new Label("Game Over", 100); 
-        addObject(gameOverLabel, 300, 200);  
-        Label doOver = new Label("Press 'f' to try again", 50); 
-        addObject(doOver, 300, 300);  
+        respawnBullet();
+        increaseScore(); 
     }
 
+    
     private void paint(int position)
     {
         GreenfootImage bg = getBackground();
