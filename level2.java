@@ -15,5 +15,17 @@ public class level2 extends MyWorld
      */
     public level2()
     {
+        Bullet enemyBullet1 = new Bullet(); 
+        addObject(enemyBullet1, Greenfoot.getRandomNumber(400), 0);
+        Bullet enemyBullet2 = new Bullet(); 
+        addObject(enemyBullet2, Greenfoot.getRandomNumber(400), 0);
+        Bullet enemyBullet3 = new Bullet(); 
+        addObject(enemyBullet3, Greenfoot.getRandomNumber(400), 0);
+        Bullet enemyBullet4 = new Bullet(); 
+        addObject(enemyBullet4, Greenfoot.getRandomNumber(400), 0);
+        Bullet enemyBullet5 = new Bullet(); 
+        addObject(enemyBullet5, Greenfoot.getRandomNumber(400), 0);
+        Bullet enemyBullet6 = new Bullet(); 
+        addObject(enemyBullet6, Greenfoot.getRandomNumber(400), 0);
     }
 }

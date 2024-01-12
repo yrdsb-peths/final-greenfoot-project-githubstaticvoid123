@@ -35,7 +35,7 @@ public class Player extends Actor
         //  your action code here.
         if(isTouching(Bullet.class))
             {
-                World myWorld = getWorld(); 
+                MyWorld World = (MyWorld) getWorld(); 
                 
                 for(int i = 0; i < death.length; i++)
                 {
@@ -43,6 +43,7 @@ public class Player extends Actor
                 }
                 setImage(death[0]); 
                 Deathsound.play(); 
+                World.gameOver(); 
             }
         animateShip(); 
         if (Greenfoot.isKeyDown("a"))
@@ -77,6 +78,7 @@ public class Player extends Actor
             setLocation(getX(), getY() + 5); 
         }
     }
+    
     
     
     

@@ -24,4 +24,13 @@ public class gameOver extends World
         addObject(restartLabel, 300, 200); 
         
     }
+    
+    public void act()  
+    {
+        if(Greenfoot.isKeyDown("f"))
+        {
+            TitleScreen act = new TitleScreen(); 
+            Greenfoot.setWorld(act); 
+        }
+    }
 }

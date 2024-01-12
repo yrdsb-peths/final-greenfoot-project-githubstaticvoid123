@@ -19,7 +19,8 @@ public class MyWorld extends World
     private static final int picHeight = (new GreenfootImage(scrollBack)).getHeight();
     private GreenfootImage bgImage, bgBase;
     private int scrollPosition = 0; 
-    private int score = 0; 
+    
+    private int gameScore = 1; 
     Label scoreLabel;
     // restart here
    
@@ -45,7 +46,7 @@ public class MyWorld extends World
         addObject(enemyBullet, 300, 0);
         Laser heroLaser = new Laser();
 
-        Label scoreLabel = new Label("0", 80); 
+        scoreLabel = new Label("0", 80); 
         addObject(scoreLabel, 100, 100);
         
         scroller = new Scroller(this, new GreenfootImage("Parallax100.png"));
@@ -59,12 +60,12 @@ public class MyWorld extends World
     }
     public void increaseScore()
     {
-        score++;
-        
+        gameScore++; 
+        scoreLabel.setValue(gameScore); 
     }
     
-        
     
+        
     public void gameOver() 
     {
         gameOver deathscreen = new gameOver(); 
