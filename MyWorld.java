@@ -19,12 +19,13 @@ public class MyWorld extends World
     private static final int picHeight = (new GreenfootImage(scrollBack)).getHeight();
     private GreenfootImage bgImage, bgBase;
     private int scrollPosition = 0; 
-    
+
     private int gameScore = 1; 
     Label scoreLabel;
     // restart here
    
     private Scroller scroller; 
+    public int pause = 1; 
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.

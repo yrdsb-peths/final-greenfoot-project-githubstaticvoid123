@@ -42,6 +42,10 @@ public class Player extends Actor
                     death[i] = new GreenfootImage("images/gameOver/tile00" + i + ".png"); 
                 }
                 setImage(death[0]); 
+                setImage(death[1]); 
+                setImage(death[2]); 
+                setImage(death[3]); 
+                setImage(death[4]);
                 Deathsound.play(); 
                 World.gameOver(); 
             }
