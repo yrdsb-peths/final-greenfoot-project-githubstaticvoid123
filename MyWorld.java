@@ -22,6 +22,7 @@ public class MyWorld extends World
 
     private int gameScore = 1; 
     Label scoreLabel;
+    Label funLabel; 
     // restart here
    
     private Scroller scroller; 
@@ -46,9 +47,12 @@ public class MyWorld extends World
         Bullet enemyBullet = new Bullet(); 
         addObject(enemyBullet, 300, 0);
         Laser heroLaser = new Laser();
+        
+        funLabel = new Label ("Score:", 40);
+        addObject(funLabel, 60, 100); 
 
-        scoreLabel = new Label("0", 80); 
-        addObject(scoreLabel, 100, 100);
+        scoreLabel = new Label("0", 40); 
+        addObject(scoreLabel, 120, 100);
         
         scroller = new Scroller(this, new GreenfootImage("Parallax100.png"));
          

@@ -12,6 +12,8 @@ public class Bullet extends Actor
      * Act - do whatever the Bullet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    GreenfootImage[] death = new GreenfootImage[5];
+
     public void act()
     {
         // Add your action code here.
@@ -19,7 +21,13 @@ public class Bullet extends Actor
         
         if(isTouching(Laser.class))
             { 
-                removeTouching(Laser.class);  
+                
+                removeTouching(Laser.class); 
+                for(int i = 0; i < death.length; i++) 
+                {
+                    death[i] = new GreenfootImage("images/gameOver/tile00" + i + ".png"); 
+                }
+        
             }
         
             if(getY() == 650)
