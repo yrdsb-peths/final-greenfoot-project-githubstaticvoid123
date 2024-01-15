@@ -27,12 +27,20 @@ public class level3 extends MyWorld
         addObject(enemyBullet5, Greenfoot.getRandomNumber(400), 0);
         Bullet enemyBullet6 = new Bullet(); 
         addObject(enemyBullet6, Greenfoot.getRandomNumber(400), 0);
-        Bullet enemyBullet7 = new Bullet(); 
+        fastBullet enemyBullet7 = new fastBullet(); 
         addObject(enemyBullet7, Greenfoot.getRandomNumber(400), 0); 
-        Bullet enemyBullet8 = new Bullet(); 
-        addObject(enemyBullet8, Greenfoot.getRandomNumber(400), 0);
-        Bullet enemyBullet9 = new Bullet(); 
-        addObject(enemyBullet9, Greenfoot.getRandomNumber(400), 0); 
+        LeftBullet enemyBullet8 = new LeftBullet(); 
+        addObject(enemyBullet8, Greenfoot.getRandomNumber(200)+200, 0);
+        RightBullet enemyBullet9 = new RightBullet(); 
+        addObject(enemyBullet9, Greenfoot.getRandomNumber(200), 0); 
+        fastBullet enemyBullet10 = new fastBullet(); 
+        addObject(enemyBullet10, Greenfoot.getRandomNumber(400), 0); 
+        LeftBullet enemyBullet11 = new LeftBullet(); 
+        addObject(enemyBullet11, Greenfoot.getRandomNumber(200)+200, 0);
+        RightBullet enemyBullet12 = new RightBullet(); 
+        addObject(enemyBullet12, Greenfoot.getRandomNumber(200), 0); 
+        
+         
         
     }
 }

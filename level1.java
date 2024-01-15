@@ -22,4 +22,6 @@ public class level1 extends MyWorld
         Bullet enemyBullet3 = new Bullet(); 
         addObject(enemyBullet3, Greenfoot.getRandomNumber(400), 0); 
     }
+    
+    
 }

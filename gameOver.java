@@ -21,7 +21,7 @@ public class gameOver extends World
         Label deadLabel = new Label("GAME OVER", 70);
         addObject(deadLabel, 300, 100); 
         
-        Label restartLabel = new Label ("Press f to restart", 70); 
+        Label restartLabel = new Label ("Press z to restart", 70); 
         addObject(restartLabel, 300, 200); 
         
         Label highscoreLabel =  new Label ("Your score was:" , 70); 
@@ -31,7 +31,7 @@ public class gameOver extends World
     
     public void act()  
     {
-        if(Greenfoot.isKeyDown("f"))
+        if(Greenfoot.isKeyDown("z"))
         {
             TitleScreen act = new TitleScreen(); 
             Greenfoot.setWorld(act); 

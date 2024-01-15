@@ -21,14 +21,16 @@ public class Player extends Actor
         for(int i = 0; i < idle.length; i++) 
         {
             idle[i] = new GreenfootImage("images/playerShip2/tile00" + i + ".png"); 
+            idle[i].scale(50, 50); 
         }
         setImage(idle[0]); 
     }
     
     int imageIndex = 0; 
     GreenfootSound Deathsound = new GreenfootSound ("mixkit-arcade-space-shooter-dead-notification-272.mp3");
-    private static int COOLDOWN_MAX = 20; 
+    private static int COOLDOWN_MAX = 10; 
     private int cannonCooldown = 0; 
+
     
     public void act()
     {
@@ -52,11 +54,11 @@ public class Player extends Actor
         animateShip(); 
         if (Greenfoot.isKeyDown("a"))
         {
-            move(-5); 
+            move(-2); 
         }
         if (Greenfoot.isKeyDown("d"))
         {
-            move(5); 
+            move(2); 
         }
         if (Greenfoot.isKeyDown("space"))
         {
@@ -75,11 +77,11 @@ public class Player extends Actor
         }
         if(Greenfoot.isKeyDown("w")) 
         {
-            setLocation(getX(), getY() - 5); 
+            setLocation(getX(), getY() - 2); 
         }
         if(Greenfoot.isKeyDown("s")) 
         {
-            setLocation(getX(), getY() + 5); 
+            setLocation(getX(), getY() + 2); 
         }
     }
     

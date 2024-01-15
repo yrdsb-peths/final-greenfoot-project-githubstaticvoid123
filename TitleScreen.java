@@ -18,6 +18,8 @@ public class TitleScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
+        
+        
         Label titleLabel = new Label("Space Shooter 4000", 50); 
         addObject(titleLabel, 300, 100); 
         
@@ -29,6 +31,20 @@ public class TitleScreen extends World
         
         Label startLabel3 = new Label("Press h to play level 3", 30); 
         addObject(startLabel3, 300, 360); 
+        
+        Label startLabel4 = new Label("Your Score:", 30); 
+        addObject(startLabel4, 250, 20); 
+        
+        Label scoreLabel = new Label("0", 50); 
+        addObject(scoreLabel, 300, 20); 
+        
+        Label startLabel5 = new Label("High Score:", 30); 
+        addObject(startLabel5, 250, 55); 
+        
+        Label scoreLabel2 = new Label("0", 50); 
+        addObject(scoreLabel2, 300, 55); 
+        
+        
     }
     
     
@@ -38,6 +54,7 @@ public class TitleScreen extends World
         {
             level1 gameWorld1 = new level1(); 
             Greenfoot.setWorld(gameWorld1); 
+            
         }
         
         if(Greenfoot.isKeyDown("g"))

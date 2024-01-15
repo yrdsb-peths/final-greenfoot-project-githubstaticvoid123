@@ -20,9 +20,12 @@ public class MyWorld extends World
     private GreenfootImage bgImage, bgBase;
     private int scrollPosition = 0; 
 
-    private int gameScore = 1; 
+    private int gameScore = 0; 
+    private int highScore = 0; 
     Label scoreLabel;
     Label funLabel; 
+    Label hiscoreLabel; 
+    Label hiscore2Label; 
     // restart here
    
     private Scroller scroller; 
@@ -30,7 +33,7 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(400, 800, 1);
+        super(400, 650, 1);
         //GreenfootImage background = new GreenfootImage("Parallax100.png");
         //setBackground(background);
 
@@ -43,16 +46,22 @@ public class MyWorld extends World
         //addObject(img0, getWidth()/2, getHeight()/2);
         
 
-        addObject(HeroShip, 300, 300); 
+        addObject(HeroShip, 200, 600); 
         Bullet enemyBullet = new Bullet(); 
         addObject(enemyBullet, 300, 0);
         Laser heroLaser = new Laser();
         
         funLabel = new Label ("Score:", 40);
-        addObject(funLabel, 60, 100); 
+        addObject(funLabel, 60, 80); 
 
         scoreLabel = new Label("0", 40); 
-        addObject(scoreLabel, 120, 100);
+        addObject(scoreLabel, 120, 80);
+        
+        hiscoreLabel = new Label ("High Score: ", 40); 
+        addObject(hiscoreLabel, 102, 130); 
+        
+        hiscore2Label = new Label ("0", 40); 
+        addObject(hiscore2Label, 200, 130); 
         
         scroller = new Scroller(this, new GreenfootImage("Parallax100.png"));
          
@@ -69,11 +78,35 @@ public class MyWorld extends World
         scoreLabel.setValue(gameScore); 
     }
     
+    public void increaseScore2()
+    {
+        gameScore++; 
+        gameScore++; 
+        scoreLabel.setValue(gameScore); 
+    }
     
-        
+    public void increaseScore3() 
+    {
+        gameScore++; 
+        gameScore++; 
+        gameScore++; 
+        scoreLabel.setValue(gameScore); 
+    }
+    
+    public void setHiScore() 
+    {
+        if (highScore > gameScore) 
+        {
+        highScore = gameScore; 
+        hiscoreLabel.setValue(highScore); 
+        }   
+    }
+    
     public void gameOver() 
     {
+        setHiScore(); 
         gameOver deathscreen = new gameOver(); 
+        
         Greenfoot.setWorld(deathscreen); 
     }
 
@@ -85,12 +118,51 @@ public class MyWorld extends World
         addObject(newBullet, x, y); 
     }
     
+    public void respawnFastBullet()
+    {
+        fastBullet newBullet1 = new fastBullet(); 
+        int x = Greenfoot.getRandomNumber(400); 
+        int y = 0; 
+        addObject(newBullet1, x, y); 
+    }
+    
+    public void respawnLeftBullet() 
+    {
+        LeftBullet newBullet2 = new LeftBullet(); 
+        addObject(newBullet2, Greenfoot.getRandomNumber(200)+200, 0); 
+    }
+    
+    public void respawnRightBullet() 
+    {
+        RightBullet newBullet3 = new RightBullet(); 
+        addObject(newBullet3, Greenfoot.getRandomNumber(200)+200, 0);
+    }
+        
+    
     public void Destroy() 
     {
         respawnBullet();
         increaseScore(); 
     }
-
+    
+    public void makefastBullet() 
+    {
+        increaseScore2(); 
+        respawnFastBullet(); 
+    }
+    
+    public void makeLeftBullet()
+    {
+        increaseScore3(); 
+        respawnLeftBullet(); 
+    }
+    
+    public void makeRightBullet()
+    {
+        increaseScore3(); 
+        respawnRightBullet(); 
+    }
+  
     
     private void paint(int position)
     {

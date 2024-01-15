@@ -1,54 +1,44 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Bullet here.
+ * Write a description of class zigzagRightBullet here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bullet extends Actor
+public class RightBullet extends Actor
 {
     /**
-     * Act - do whatever the Bullet wants to do. This method is called whenever
+     * Act - do whatever the zigzagRightBullet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    GreenfootImage[] death = new GreenfootImage[5];
-
     public void act()
     {
         // Add your action code here.
-        setLocation(getX(), getY() + 1); 
+        setLocation(getX()+1, getY()+2); 
         Actor Laser = getOneIntersectingObject(Laser.class); 
-        MyWorld World = (MyWorld) getWorld();
-        
         if(Laser!=null)
             { 
                 
+                MyWorld World = (MyWorld) getWorld(); 
                 removeTouching(Laser.class); 
                 getWorld().addObject(new Boom(), getX(), getY()); 
                 getWorld().removeObject(this);
                 return; 
-
-        
+                
+                
                 
         
             }
         
-            if(getY() == 600)
+            if(getY() == 650)
             {
         
-                getWorld().removeObject(this); 
-                
+                Destroy4(); 
             }
     }
     
-    public void remove()
-    {
-        MyWorld World = (MyWorld) getWorld(); 
-        getWorld().removeObject(this); 
-    }
-    
-    public void Destroy2()
+    public void Destroy4()
     {
         MyWorld World = (MyWorld) getWorld(); 
         World.respawnBullet();
