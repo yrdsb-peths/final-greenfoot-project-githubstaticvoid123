@@ -14,6 +14,7 @@ public class TitleScreen extends World
      * 
      * 
      */
+    private int highScore;
     public TitleScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -35,15 +36,11 @@ public class TitleScreen extends World
         Label startLabel4 = new Label("Your Score:", 30); 
         addObject(startLabel4, 250, 20); 
         
-        Label scoreLabel = new Label("0", 50); 
-        addObject(scoreLabel, 300, 20); 
+        Label scoreLabel = new Label("0", 40); 
+        addObject(scoreLabel, 330, 20); 
         
-        Label startLabel5 = new Label("High Score:", 30); 
-        addObject(startLabel5, 250, 55); 
-        
-        Label scoreLabel2 = new Label("0", 50); 
-        addObject(scoreLabel2, 300, 55); 
-        
+        Label startLabel6 = new Label ("Press space to shoot", 25);
+        addObject(startLabel6, 300, 130); 
         
     }
     
@@ -69,5 +66,17 @@ public class TitleScreen extends World
             Greenfoot.setWorld(gameWorld3); 
         }
     }
+    
+    public void setHighScore(int highScore){
+        this.highScore = highScore;
+        
+        Label startLabel5 = new Label("High Score:", 30); 
+        addObject(startLabel5, 250, 55); 
+        
+        Label scoreLabel2 = new Label(highScore, 40); 
+        addObject(scoreLabel2, 330, 55); 
+        
+    }
+ 
     
 }

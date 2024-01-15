@@ -36,6 +36,8 @@ public class fastBullet extends Actor
     public void Destroy3()
     {
         MyWorld World = (MyWorld) getWorld(); 
-        World.respawnBullet();
+        World.respawnFastBullet();
+        World.removeObject(this); 
+        return; 
     }
 }

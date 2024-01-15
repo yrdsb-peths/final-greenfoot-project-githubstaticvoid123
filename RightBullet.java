@@ -15,7 +15,7 @@ public class RightBullet extends Actor
     public void act()
     {
         // Add your action code here.
-        setLocation(getX()+1, getY()+2); 
+        setLocation(getX()+1, getY()+1); 
         Actor Laser = getOneIntersectingObject(Laser.class); 
         if(Laser!=null)
             { 
@@ -25,15 +25,15 @@ public class RightBullet extends Actor
                 getWorld().addObject(new Boom(), getX(), getY()); 
                 getWorld().removeObject(this);
                 return; 
-                
-                
-                
-        
             }
         
-            if(getY() == 650)
+            if(getY() == 700)
             {
-        
+                Destroy4(); 
+            }
+            
+            if(getX() == 400)
+            {
                 Destroy4(); 
             }
     }
@@ -41,6 +41,6 @@ public class RightBullet extends Actor
     public void Destroy4()
     {
         MyWorld World = (MyWorld) getWorld(); 
-        World.respawnBullet();
+        World.respawnRightBullet();
     }
 }

@@ -105,7 +105,7 @@ public class MyWorld extends World
     public void gameOver() 
     {
         setHiScore(); 
-        gameOver deathscreen = new gameOver(); 
+        gameOver deathscreen = new gameOver(gameScore, highScore); 
         
         Greenfoot.setWorld(deathscreen); 
     }
@@ -128,14 +128,19 @@ public class MyWorld extends World
     
     public void respawnLeftBullet() 
     {
+        System.out.println("RESPAWNING LEFT BULLET");
         LeftBullet newBullet2 = new LeftBullet(); 
-        addObject(newBullet2, Greenfoot.getRandomNumber(200)+200, 0); 
+        int x = Greenfoot.getRandomNumber(200)+200; 
+        int y = 0; 
+        addObject(newBullet2, x, y); 
     }
     
     public void respawnRightBullet() 
     {
         RightBullet newBullet3 = new RightBullet(); 
-        addObject(newBullet3, Greenfoot.getRandomNumber(200)+200, 0);
+        int x = Greenfoot.getRandomNumber(200); 
+        int y = 0; 
+        addObject(newBullet3, x, y);
     }
         
     
@@ -147,20 +152,21 @@ public class MyWorld extends World
     
     public void makefastBullet() 
     {
-        increaseScore2(); 
         respawnFastBullet(); 
+        increaseScore2(); 
     }
     
     public void makeLeftBullet()
     {
-        increaseScore3(); 
         respawnLeftBullet(); 
+        increaseScore3(); 
+        
     }
     
     public void makeRightBullet()
     {
-        increaseScore3(); 
         respawnRightBullet(); 
+        increaseScore3(); 
     }
   
     
@@ -176,4 +182,6 @@ public class MyWorld extends World
     // determine amount to scroll (dsx, dsy)
     scroller.scroll(0, 1); // have scroller scroll world
     }
+    
+
 }

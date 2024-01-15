@@ -25,21 +25,17 @@ public class LeftBullet extends Actor
                 getWorld().addObject(new Boom(), getX(), getY()); 
                 getWorld().removeObject(this);
                 return; 
-                
-                
-                
-                
-        
             }
         
-            if(getY() == 650)
+            if(getY() == 700)
             {
-        
+                
                 Destroy3(); 
             }
             
             if(getX() == 0)
             {
+                
                 Destroy3(); 
             }
 
@@ -47,6 +43,9 @@ public class LeftBullet extends Actor
     public void Destroy3()
     {
         MyWorld World = (MyWorld) getWorld(); 
-        World.respawnBullet();
+        World.respawnLeftBullet();
+        World.removeObject(this); 
+        return; 
+        
     }
 }

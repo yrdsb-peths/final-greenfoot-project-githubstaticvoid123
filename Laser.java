@@ -24,23 +24,28 @@ public class Laser extends Actor
         
         setLocation(getX(), getY() - 5);
         MyWorld World = (MyWorld) getWorld(); 
+        
+        
+        
         if(isTouching(Bullet.class))
             { 
                 Bullet newBullet = new Bullet(); 
                 World.Destroy();
             }
         
+        
         if(isTouching(fastBullet.class))
             {
                 fastBullet newBullet = new fastBullet(); 
                 World.makefastBullet(); 
             }
-            
+        
         if(isTouching(LeftBullet.class))
             {
                 LeftBullet newBullet = new LeftBullet(); 
                 World.makeLeftBullet(); 
             }
+        
             
         if(isTouching(RightBullet.class))
             {

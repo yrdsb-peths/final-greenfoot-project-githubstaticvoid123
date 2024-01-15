@@ -50,6 +50,7 @@ public class Player extends Actor
                 setImage(death[4]);
                 Deathsound.play(); 
                 World.gameOver(); 
+                
             }
         animateShip(); 
         if (Greenfoot.isKeyDown("a"))
