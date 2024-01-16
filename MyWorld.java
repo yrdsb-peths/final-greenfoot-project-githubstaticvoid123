@@ -55,7 +55,7 @@ public class MyWorld extends World
         addObject(funLabel, 60, 80); 
 
         scoreLabel = new Label("0", 40); 
-        addObject(scoreLabel, 120, 80);
+        addObject(scoreLabel, 140, 80);
         
         hiscoreLabel = new Label ("High Score: ", 40); 
         addObject(hiscoreLabel, 102, 130); 
