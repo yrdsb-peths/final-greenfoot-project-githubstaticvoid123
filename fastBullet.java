@@ -26,10 +26,9 @@ public class fastBullet extends Actor
                 return; 
             }
         
-        if(getY() == 650)
+        if(getY() == 600)
             {
-        
-                Destroy3(); 
+                getWorld().removeObject(this);
             }
     }
     

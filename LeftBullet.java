@@ -30,13 +30,13 @@ public class LeftBullet extends Actor
             if(getY() == 700)
             {
                 
-                Destroy3(); 
+                getWorld().removeObject(this); 
             }
             
             if(getX() == 0)
             {
                 
-                Destroy3(); 
+                getWorld().removeObject(this); 
             }
 
     }

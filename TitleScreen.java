@@ -33,11 +33,8 @@ public class TitleScreen extends World
         Label startLabel3 = new Label("Press h to play level 3", 30); 
         addObject(startLabel3, 300, 360); 
         
-        Label startLabel4 = new Label("Your Score:", 30); 
-        addObject(startLabel4, 250, 20); 
-        
-        Label scoreLabel = new Label("0", 40); 
-        addObject(scoreLabel, 330, 20); 
+        Label startLabel4 = new Label ("Press i for instructions", 25); 
+        addObject(startLabel4, 150, 50); 
         
         Label startLabel6 = new Label ("Press space to shoot", 25);
         addObject(startLabel6, 300, 130); 
@@ -65,6 +62,13 @@ public class TitleScreen extends World
             level3 gameWorld3 = new level3(); 
             Greenfoot.setWorld(gameWorld3); 
         }
+        
+        if(Greenfoot.isKeyDown("i"))
+        {
+            Instructions gameWorld4 = new Instructions(); 
+            Greenfoot.setWorld(gameWorld4); 
+        }
+        
     }
     
     public void setHighScore(int highScore){

@@ -28,10 +28,10 @@ public class gameOver extends World
     
         
         Label restartLabel2 = new Label(finalScore, 30); 
-        addObject(restartLabel2, 350, 300); 
+        addObject(restartLabel2, 400, 300); 
         
         Label highscoreLabel =  new Label ("Your score was:" , 30); 
-        addObject(highscoreLabel, 250, 300); 
+        addObject(highscoreLabel, 260, 300); 
         
     }
     

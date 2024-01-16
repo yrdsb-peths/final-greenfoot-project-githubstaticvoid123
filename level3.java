@@ -52,6 +52,7 @@ public class level3 extends MyWorld
         enemyBullet10 = new LeftBullet(); 
         
         enemyBullet11 =  new RightBullet(); 
+ 
         
          
         actCounter = 0;
