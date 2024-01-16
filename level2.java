@@ -26,24 +26,25 @@ public class level2 extends MyWorld
     
     public level2()
     {
-        Bullet enemyBullet1 = new Bullet(); 
+        enemyBullet1 = new Bullet(); 
         //addObject(enemyBullet1, Greenfoot.getRandomNumber(400), 0);
-        Bullet enemyBullet2 = new Bullet(); 
+        enemyBullet2 = new Bullet(); 
         //addObject(enemyBullet2, Greenfoot.getRandomNumber(400), 0);
-        Bullet enemyBullet3 = new Bullet(); 
+        enemyBullet3 = new Bullet(); 
         //addObject(enemyBullet3, Greenfoot.getRandomNumber(400), 0);
-        Bullet enemyBullet4 = new Bullet(); 
+        enemyBullet4 = new fastBullet(); 
         //addObject(enemyBullet4, Greenfoot.getRandomNumber(400), 0);
-        Bullet enemyBullet5 = new Bullet(); 
+        enemyBullet5 = new Bullet(); 
         //addObject(enemyBullet5, Greenfoot.getRandomNumber(400), 0);
-        Bullet enemyBullet6 = new Bullet(); 
+        enemyBullet6 = new Bullet(); 
         //addObject(enemyBullet6, Greenfoot.getRandomNumber(400), 0);
-        fastBullet enemyBullet7 = new fastBullet(); 
+        enemyBullet7 = new fastBullet(); 
         //addObject(enemyBullet7, Greenfoot.getRandomNumber(400), 0); 
-        LeftBullet enemyBullet8 = new LeftBullet(); 
+        enemyBullet8 = new LeftBullet(); 
         //addObject(enemyBullet8, Greenfoot.getRandomNumber(200)+200, 0);
-        RightBullet enemyBullet9 = new RightBullet(); 
+        enemyBullet9 = new RightBullet(); 
         //addObject(enemyBullet9, Greenfoot.getRandomNumber(200), 0); 
+        actCounter = 0;
     
     }
     

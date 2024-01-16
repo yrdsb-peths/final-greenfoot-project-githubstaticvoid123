@@ -20,12 +20,13 @@ public class level1 extends MyWorld
     
     public level1()
     {
-        Bullet enemyBullet1 = new Bullet(); 
+        enemyBullet1 = new Bullet(); 
         //addObject(enemyBullet1, Greenfoot.getRandomNumber(400), 0);
-        Bullet enemyBullet2 = new Bullet(); 
+        enemyBullet2 = new Bullet(); 
         //addObject(enemyBullet2, Greenfoot.getRandomNumber(400), 0);
-        Bullet enemyBullet3 = new Bullet(); 
-        //addObject(enemyBullet3, Greenfoot.getRandomNumber(400), 0); 
+        enemyBullet3 = new Bullet(); 
+        //addObject(enemyBullet3, Greenfoot.getRandomNumber(400), 0);
+        actCounter = 0;
     }
     
     public void act(){
