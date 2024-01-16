@@ -36,9 +36,6 @@ public class TitleScreen extends World
         Label startLabel4 = new Label ("Press i for instructions", 25); 
         addObject(startLabel4, 150, 50); 
         
-        Label startLabel6 = new Label ("Press space to shoot", 25);
-        addObject(startLabel6, 300, 130); 
-        
     }
     
     

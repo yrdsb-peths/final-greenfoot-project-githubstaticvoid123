@@ -57,11 +57,6 @@ public class MyWorld extends World
         scoreLabel = new Label("0", 40); 
         addObject(scoreLabel, 140, 80);
         
-        hiscoreLabel = new Label ("High Score: ", 40); 
-        addObject(hiscoreLabel, 102, 130); 
-        
-        hiscore2Label = new Label ("0", 40); 
-        addObject(hiscore2Label, 200, 130); 
         
         scroller = new Scroller(this, new GreenfootImage("Parallax100.png"));
          
