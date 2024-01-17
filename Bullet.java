@@ -12,8 +12,13 @@ public class Bullet extends Actor
      * Act - do whatever the Bullet wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
     GreenfootImage[] death = new GreenfootImage[5];
-
+    GreenfootSound Deathsound = new GreenfootSound ("mixkit-fast-game-explosion-1688.mp3"); 
+    public Bullet(){
+        
+    }
+    
     public void act()
     {
         // Add your action code here.
@@ -23,14 +28,17 @@ public class Bullet extends Actor
         
         if(Laser!=null)
             { 
-                
+                Deathsound.play(); 
                 removeTouching(Laser.class); 
+                
                 getWorld().addObject(new Boom(), getX(), getY()); 
                 getWorld().removeObject(this);
                 return;        
+                
             }
         
-            if(getY() == 600)
+            
+        if(getY() == 600)
             {
         
                 getWorld().removeObject(this); 

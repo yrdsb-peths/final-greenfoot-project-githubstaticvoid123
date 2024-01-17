@@ -21,7 +21,7 @@ public class TitleScreen extends World
         super(600, 400, 1); 
         
         
-        Label titleLabel = new Label("Space Shooter 4000", 50); 
+        Label titleLabel = new Label("Fireworks 4000", 50); 
         addObject(titleLabel, 300, 100); 
         
         Label startLabel = new Label("Press f to play level 1", 30); 
