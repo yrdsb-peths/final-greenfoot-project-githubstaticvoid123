@@ -20,7 +20,7 @@ public class Instructions extends World
         Label aLabel = new Label ("Use wasd to move", 30);
         addObject(aLabel, 300, 100); 
         
-        Label bLabel = new Label ("Use i to return", 30); 
+        Label bLabel = new Label ("Use z to return", 30); 
         addObject(bLabel, 100, 50); 
         
         Label spaceLabel = new Label ("Use space bar to shoot", 30); 
@@ -38,7 +38,7 @@ public class Instructions extends World
     
     public void act() 
     {
-        if(Greenfoot.isKeyDown("i"))
+        if(Greenfoot.isKeyDown("z"))
         {
             TitleScreen b = new TitleScreen();
             Greenfoot.setWorld(b); 
