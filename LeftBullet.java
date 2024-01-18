@@ -31,12 +31,14 @@ public class LeftBullet extends Actor
             {
                 
                 getWorld().removeObject(this); 
+                return;
             }
             
             if(getX() == 0)
             {
                 
                 getWorld().removeObject(this); 
+                return;
             }
 
     }
