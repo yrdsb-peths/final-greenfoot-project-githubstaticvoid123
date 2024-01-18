@@ -27,7 +27,7 @@ public class LeftBullet extends Actor
                 return; 
             }
         
-            if(getY() == 700)
+            if(getY() == 640)
             {
                 
                 getWorld().removeObject(this); 

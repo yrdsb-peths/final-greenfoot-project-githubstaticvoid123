@@ -27,13 +27,13 @@ public class RightBullet extends Actor
                 return; 
             }
         
-            if(getY() == 650)
+            if(getY() == 640)
             {
                 getWorld().removeObject(this); 
                 return; 
             }
             
-            if(getX() == 390)
+            if(getX() == 400)
             {
                 getWorld().removeObject(this); 
                 return; 
