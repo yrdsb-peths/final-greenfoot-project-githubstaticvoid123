@@ -26,6 +26,7 @@ public class MyWorld extends World
     Label funLabel; 
     Label hiscoreLabel; 
     Label hiscore2Label; 
+    GreenfootSound backgroundMusic = new GreenfootSound("XvsZero.mp3");
     // restart here
    
     private Scroller scroller; 
@@ -36,11 +37,13 @@ public class MyWorld extends World
         super(400, 650, 1);
         //GreenfootImage background = new GreenfootImage("Parallax100.png");
         //setBackground(background);
+        backgroundMusic.playLoop();
 
         //bgImage = new GreenfootImage(getBackground());
         //bgBase = new GreenfootImage(picWidth, getHeight());
         //bgBase.drawImage(bgImage, 0, 0);
         Player HeroShip = new Player(); 
+        
 
         //Background img0 = new Background(); 
         //addObject(img0, getWidth()/2, getHeight()/2);
@@ -56,8 +59,6 @@ public class MyWorld extends World
 
         scoreLabel = new Label("0", 40); 
         addObject(scoreLabel, 140, 80);
-        
-        
         scroller = new Scroller(this, new GreenfootImage("Parallax100.png"));
          
         
@@ -101,7 +102,7 @@ public class MyWorld extends World
     {
         setHiScore(); 
         gameOver deathscreen = new gameOver(gameScore, highScore); 
-        
+        backgroundMusic.setVolume(0); 
         Greenfoot.setWorld(deathscreen); 
     }
 

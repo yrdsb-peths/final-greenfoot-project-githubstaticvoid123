@@ -26,6 +26,7 @@ public class level3 extends MyWorld
     private RightBullet enemyBullet9;
     private LeftBullet enemyBullet10; 
     private RightBullet enemyBullet11; 
+    private fastBullet enemyBullet12;
     private int actCounter;
     public level3()
     {
@@ -52,6 +53,7 @@ public class level3 extends MyWorld
         enemyBullet10 = new LeftBullet(); 
         
         enemyBullet11 =  new RightBullet(); 
+        enemyBullet12 = new fastBullet();
  
         
          
@@ -71,6 +73,7 @@ public class level3 extends MyWorld
              addObject(enemyBullet9, Greenfoot.getRandomNumber(200), 0); 
              addObject(enemyBullet10, Greenfoot.getRandomNumber(200)+200, 0);
              addObject(enemyBullet11, Greenfoot.getRandomNumber(200), 0);
+             addObject(enemyBullet12, Greenfoot.getRandomNumber(400), 0); 
          }
          actCounter++;
     }
